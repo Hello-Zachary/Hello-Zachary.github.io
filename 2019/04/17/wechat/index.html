@@ -5,23 +5,27 @@
   <meta name="baidu-site-verification" content="sLHVMS1DLZ">
   <meta charset="utf-8">
   
-  <title>Hello World | Zachary</title>
+  <title>微信小程序上拉更新数据 | Zachary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Zachary,Zachary's Blog">
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="First">
+  <meta name="description" content="微信小程序上拉更新数据 今天在做小程序项目的时候发现需要用到上拉加载新数据的功能，其实这个功能实用性还蛮大的，所以呢，在这里记录一在小程序里下如何通过上拉加载加载更多数据。   我们先来看下小程序官方文档里关于页面上拉触底事件的介绍： 是不是有点迷糊，我第一次看的时候也是犯晕，不知道如何操作，谁叫自己菜呢！废话不多说，直接上个Demo吧！  这里要说明一下，我的数据来源是从小程序的云数据库获取的">
+<meta name="keywords" content="微信小程序,上拉更新数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://hello-zachary.github.io/2017/06/18/hello-world/index.html">
+<meta property="og:title" content="微信小程序上拉更新数据">
+<meta property="og:url" content="https://hello-zachary.github.io/2019/04/17/wechat/index.html">
 <meta property="og:site_name" content="Zachary">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="微信小程序上拉更新数据 今天在做小程序项目的时候发现需要用到上拉加载新数据的功能，其实这个功能实用性还蛮大的，所以呢，在这里记录一在小程序里下如何通过上拉加载加载更多数据。   我们先来看下小程序官方文档里关于页面上拉触底事件的介绍： 是不是有点迷糊，我第一次看的时候也是犯晕，不知道如何操作，谁叫自己菜呢！废话不多说，直接上个Demo吧！  这里要说明一下，我的数据来源是从小程序的云数据库获取的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-14T11:06:11.093Z">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2019/04/17/VzETci.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2019/04/17/VzE9NL.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2019/04/17/VDJF9F.png">
+<meta property="og:updated_time" content="2019-04-17T15:20:19.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="微信小程序上拉更新数据">
+<meta name="twitter:description" content="微信小程序上拉更新数据 今天在做小程序项目的时候发现需要用到上拉加载新数据的功能，其实这个功能实用性还蛮大的，所以呢，在这里记录一在小程序里下如何通过上拉加载加载更多数据。   我们先来看下小程序官方文档里关于页面上拉触底事件的介绍： 是不是有点迷糊，我第一次看的时候也是犯晕，不知道如何操作，谁叫自己菜呢！废话不多说，直接上个Demo吧！  这里要说明一下，我的数据来源是从小程序的云数据库获取的">
+<meta name="twitter:image" content="https://t1.picb.cc/uploads/2019/04/17/VzETci.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -136,14 +140,14 @@ ga('send', 'pageview');
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-wechat" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      Hello World
+      微信小程序上拉更新数据
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -151,12 +155,12 @@ ga('send', 'pageview');
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/First/">First</a>
+                      <a href="/categories/微信小程序上拉更新数据/">微信小程序上拉更新数据</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2017-06-18
+          <i class="fa fa-calendar"></i>  2019-04-17
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -172,20 +176,33 @@ ga('send', 'pageview');
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h2 id="微信小程序上拉更新数据"><a href="#微信小程序上拉更新数据" class="headerlink" title="微信小程序上拉更新数据"></a>微信小程序上拉更新数据</h2><hr>
+<p>今天在做小程序项目的时候发现需要用到<strong>上拉加载新数据</strong>的功能，其实这个功能实用性还蛮大的，所以呢，在这里记录一在小程序里下如何<strong>通过上拉加载加载更多数据</strong>。</p>
+<hr>
+<p> 我们先来看下小程序官方文档里关于<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html" target="_blank" rel="noopener">页面上拉触底事件</a>的介绍：<br><img src="https://t1.picb.cc/uploads/2019/04/17/VzETci.png" alt="页面上拉触底事件触发时距页面底部距离"><br><img src="https://t1.picb.cc/uploads/2019/04/17/VzE9NL.png" alt="enter image description here"></p>
+<p>是不是有点迷糊，我第一次看的时候也是犯晕，不知道如何操作，谁叫自己菜呢！废话不多说，直接上个Demo吧！</p>
+<blockquote>
+<p>这里要说明一下，我的数据来源是从小程序的云数据库获取的</p>
+</blockquote>
+<hr>
+<h3 id="数据渲染"><a href="#数据渲染" class="headerlink" title="数据渲染"></a>数据渲染</h3><blockquote>
+<p>这个没什么讲的，就是把获取的数据渲染在页面上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.wxml文件</span><br><span class="line"></span><br><span class="line">&lt;view wx:for=&quot;&#123;&#123;num&#125;&#125;&quot;&gt;</span><br><span class="line">&lt;view class=&apos;num&apos;&gt;&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="数据分页获取"><a href="#数据分页获取" class="headerlink" title="数据分页获取"></a>数据分页获取</h3><p>要实现上拉数据更新，那数据肯定要进行分页获取吧,这里涉及到<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/collection.skip.html" target="_blank" rel="noopener">小程序云数据库数据的分页获取</a>。<br><img src="https://t1.picb.cc/uploads/2019/04/17/VDJF9F.png" alt="enter image description here"><br>具体的用法咱接着往下看吧</p>
+<hr>
+<h3 id="获取数据代码"><a href="#获取数据代码" class="headerlink" title="获取数据代码"></a>获取数据代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.js文件</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    num: [],   //定义一个数组用于接收从数据库获取的数据</span><br><span class="line">    page: 0   </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面加载</span><br><span class="line">   * 在页面载入的时候执行一次查询</span><br><span class="line">   */</span><br><span class="line">  onLoad: function(options) &#123;</span><br><span class="line">    var that = this</span><br><span class="line">    wx.cloud.init();</span><br><span class="line">    const db = wx.cloud.database();</span><br><span class="line">    const Test = db.collection(&apos;Test&apos;);</span><br><span class="line">    Test.where(&#123;&#125;).limit(5).get(&#123;    //limit(5):每次获取5个数据</span><br><span class="line">      success(res) &#123;</span><br><span class="line">        that.setData(&#123;    //将获取的数据存入data里的num数组中</span><br><span class="line">          num: res.data</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>skip(number):从第number+1个数据开始加载后面的数据，因为在页面刚被加载的时候,已经加载了5条数据，上拉的时候应该从第6条数据开始加载,所以这里是skip(this.data.page*5)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">   * 定义一个获取数据的函数</span><br><span class="line">   */</span><br><span class="line">  getNum: function() &#123;</span><br><span class="line">    var that = this</span><br><span class="line">    wx.cloud.init();</span><br><span class="line">    const db = wx.cloud.database();</span><br><span class="line">    const Test = db.collection(&apos;Test&apos;);</span><br><span class="line">    Test.where(&#123;&#125;).skip(this.data.page * 5).limit(5).get(&#123;</span><br><span class="line">      success(res) &#123;</span><br><span class="line">        console.log(res)</span><br><span class="line">        var arr = res.data</span><br><span class="line">        that.setData(&#123;</span><br><span class="line">          num: that.data.num.concat(arr)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">/**</span><br><span class="line">   * 页面上拉触底事件的处理函数</span><br><span class="line">   */</span><br><span class="line">  onReachBottom: function() &#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">     /**前面在页面刚载入的时候已经加载了5条数据（也就是一页），</span><br><span class="line">       * 所以当页面上拉事件触发的时候,开始加载第二页的数据，故page得+1</span><br><span class="line">       */</span><br><span class="line">      page: this.data.page + 1 </span><br><span class="line">    &#125;)</span><br><span class="line">    this.getNum();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果想要实现无感加载，还可以在.json文件中给onReachBottom()设定合适的触发距离，这样不用拉到最底部才开始触发</p>
+</blockquote>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年04月14日 19:06</p>
-        <p>原始链接： <a class="post-url" href="/2017/06/18/hello-world/" title="Hello World">https://hello-zachary.github.io/2017/06/18/hello-world/</a></p>
+        <p>最后更新： 2019年04月17日 23:20</p>
+        <p>原始链接： <a class="post-url" href="/2019/04/17/wechat/" title="微信小程序上拉更新数据">https://hello-zachary.github.io/2019/04/17/wechat/</a></p>
         <footer>
             <a href="https://hello-zachary.github.io">
                 <img src="/images/logo.jpg" alt="Zachary">
@@ -242,7 +259,7 @@ ga('send', 'pageview');
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hello-zachary.github.io/2017/06/18/hello-world/&title=《Hello World》 — Zachary&pic=/images/github-second.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hello-zachary.github.io/2019/04/17/wechat/&title=《微信小程序上拉更新数据》 — Zachary&pic=/images/wechat-cover.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -252,22 +269,22 @@ ga('send', 'pageview');
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hello-zachary.github.io/2017/06/18/hello-world/&title=《Hello World》 — Zachary&source=一个热爱生活的程序猿" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hello-zachary.github.io/2019/04/17/wechat/&title=《微信小程序上拉更新数据》 — Zachary&source=一个热爱生活的程序猿" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hello-zachary.github.io/2017/06/18/hello-world/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hello-zachary.github.io/2019/04/17/wechat/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — Zachary&url=https://hello-zachary.github.io/2017/06/18/hello-world/&via=https://hello-zachary.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序上拉更新数据》 — Zachary&url=https://hello-zachary.github.io/2019/04/17/wechat/&via=https://hello-zachary.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hello-zachary.github.io/2017/06/18/hello-world/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hello-zachary.github.io/2019/04/17/wechat/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -277,7 +294,7 @@ ga('send', 'pageview');
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://hello-zachary.github.io/2017/06/18/hello-world/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://hello-zachary.github.io/2019/04/17/wechat/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -289,7 +306,9 @@ ga('send', 'pageview');
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/First/" class="color1">First</a>
+    <a href="/tags/微信小程序/" class="color1">微信小程序</a>
+      
+    <a href="/tags/上拉更新数据/" class="color2">上拉更新数据</a>
       
   </li>
 
@@ -302,30 +321,25 @@ ga('send', 'pageview');
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信小程序上拉更新数据"><span class="post-toc-text">微信小程序上拉更新数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据渲染"><span class="post-toc-text">数据渲染</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据分页获取"><span class="post-toc-text">数据分页获取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取数据代码"><span class="post-toc-text">获取数据代码</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/04/15/hexoFile/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          Hexo文件目录结构
-        
-      </span>
-    </a>
   
+    <a href="/2019/04/15/hexoFile/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Hexo文件目录结构</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
   
 </nav>
 
 
 
     
-        <div id="SOHUCS" sid="hello-world"></div>
+        <div id="SOHUCS" sid="wechat"></div>
 <script type="text/javascript">
     (function(){
         var appid = 'cyubuzcvo';
