@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Zachary">
 <meta property="og:description" content="编译原理—FIRST集的求法定义 设G=(VT，VN，S，P)是上下文无关文法 ，FIRST(α)={a|α能推导出aβ,a∈VT，α,β∈V*}特别的，若α能推导出ε,则规定ε∈FIRST(α)．  说得简单点就是一个文法符号串所能推导出的第一个终结字符的集合,如First(A)就是求A所有推导的符号串的第一个符号的集合。(这里默认大写字母为非终结字符，小写字母或符号为终结字符) 在这里我啰嗦一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-20T05:28:33.509Z">
+<meta property="og:updated_time" content="2019-04-21T06:03:53.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理---FIRST集的求法">
 <meta name="twitter:description" content="编译原理—FIRST集的求法定义 设G=(VT，VN，S，P)是上下文无关文法 ，FIRST(α)={a|α能推导出aβ,a∈VT，α,β∈V*}特别的，若α能推导出ε,则规定ε∈FIRST(α)．  说得简单点就是一个文法符号串所能推导出的第一个终结字符的集合,如First(A)就是求A所有推导的符号串的第一个符号的集合。(这里默认大写字母为非终结字符，小写字母或符号为终结字符) 在这里我啰嗦一">
@@ -183,7 +183,7 @@ ga('send', 'pageview');
 <li>以终结字符开头，形如X-&gt;a…：a属于FIRST(X)；</li>
 </ol>
 </li>
-<li>以非终结字符开头，且这个非终结字符不能推出ε，形如X-&gt;A…：FIRST(X)=FIRST(X);</li>
+<li>以非终结字符开头，且这个非终结字符不能推出ε，形如X-&gt;A…：FIRST(X)=FIRST(A);</li>
 <li>以非终结字符开头，且这个非终结字符能推出ε，形如X-&gt;ABC…（其中A能推导出ε，B不能推导出ε）：FIRST(X)=(FIRST(A)-{ε})∪FIRST(B)；那我们假如A能推导出ε，B能推导出ε，C不能推导出ε，则FIRST(X)=(FIRST(A)-{ε})∪(FIRST(B)-{ε})∪FIRST(C)；</li>
 <li>以非终结字符开头，且这个非终结字符能推出ε，形如X-&gt;AbC…（其中A能推导出ε，C不能推导出ε）：FIRST(X)=FIRST(A)∪{b}；</li>
 <li>产生式右部全为 非终结字符，且都能推出ε，形如X-&gt;ABCD(其中A，B，C，D都能推出ε)：FIRST(X)=(FIRST(A)-{ε})∪(FIRST(B)-{ε})∪(FIRST(C)-{ε})∪(FIRST(D)-{ε})∪{ε}；</li>
@@ -195,7 +195,7 @@ ga('send', 'pageview');
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年04月20日 13:28</p>
+        <p>最后更新： 2019年04月21日 14:03</p>
         <p>原始链接： <a class="post-url" href="/2019/04/20/FIRST/" title="编译原理---FIRST集的求法">https://hello-zachary.github.io/2019/04/20/FIRST/</a></p>
         <footer>
             <a href="https://hello-zachary.github.io">
