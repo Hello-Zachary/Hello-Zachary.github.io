@@ -5,22 +5,27 @@
   <meta name="baidu-site-verification" content="sLHVMS1DLZ">
   <meta charset="utf-8">
   
-  <title>Zachary</title>
+  <title>img标签图片加载异常 | Zachary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Zachary,Zachary's Blog">
   
-  <meta name="description" content="google-site-verification: google405c9d658ad71e7f.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zachary">
-<meta property="og:url" content="https://hello-zachary.github.io/google405c9d658ad71e7f.html">
+  <meta name="description" content="img标签加载图片异常问题引入 最近在做一个 web项目，项目中的一些图片来自外网，赋值给img标签的src属性,结果加载不出来，如果直接在浏览器地址栏上输入，可以加载出来； 查看控制台的network，错误信息为 403(forbidden)  页面效果：  network详情： 原因Referrer Policy(引用策略)  引用策略就是从一个文档发出请求时，是否在请求头部定义 Referr">
+<meta name="keywords" content="HTML,图片加载,原因">
+<meta property="og:type" content="article">
+<meta property="og:title" content="img标签图片加载异常">
+<meta property="og:url" content="https://hello-zachary.github.io/2019/11/10/loadPic/index.html">
 <meta property="og:site_name" content="Zachary">
-<meta property="og:description" content="google-site-verification: google405c9d658ad71e7f.html">
+<meta property="og:description" content="img标签加载图片异常问题引入 最近在做一个 web项目，项目中的一些图片来自外网，赋值给img标签的src属性,结果加载不出来，如果直接在浏览器地址栏上输入，可以加载出来； 查看控制台的network，错误信息为 403(forbidden)  页面效果：  network详情： 原因Referrer Policy(引用策略)  引用策略就是从一个文档发出请求时，是否在请求头部定义 Referr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T03:17:05.193Z">
+<meta property="og:image" content="https://i.niupic.com/images/2019/11/10/_138.png">
+<meta property="og:image" content="https://i.niupic.com/images/2019/11/10/_144.png">
+<meta property="og:image" content="https://i.niupic.com/images/2019/11/10/_166.png">
+<meta property="og:updated_time" content="2019-11-10T13:45:01.046Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zachary">
-<meta name="twitter:description" content="google-site-verification: google405c9d658ad71e7f.html">
+<meta name="twitter:title" content="img标签图片加载异常">
+<meta name="twitter:description" content="img标签加载图片异常问题引入 最近在做一个 web项目，项目中的一些图片来自外网，赋值给img标签的src属性,结果加载不出来，如果直接在浏览器地址栏上输入，可以加载出来； 查看控制台的network，错误信息为 403(forbidden)  页面效果：  network详情： 原因Referrer Policy(引用策略)  引用策略就是从一个文档发出请求时，是否在请求头部定义 Referr">
+<meta name="twitter:image" content="https://i.niupic.com/images/2019/11/10/_138.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -135,17 +140,89 @@ ga('send', 'pageview');
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-loadPic" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry " itemprop="articleBody">
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      img标签图片加载异常
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/img标签图片加载异常/">img标签图片加载异常</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-11-10
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
       
             
-            google-site-verification: google405c9d658ad71e7f.html
+            <h2 id="img标签加载图片异常"><a href="#img标签加载图片异常" class="headerlink" title="img标签加载图片异常"></a>img标签加载图片异常</h2><h3 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a><code>问题引入</code></h3><blockquote>
+<p>最近在做一个 web项目，项目中的一些图片来自外网，赋值给img标签的src属性,结果加载不出来，如果直接在浏览器地址栏上输入，可以加载出来； 查看控制台的network，错误信息为 403(forbidden)</p>
+</blockquote>
+<p>页面效果：<br><img src="https://i.niupic.com/images/2019/11/10/_138.png" alt></p>
+<hr>
+<p>network详情：<br><img src="https://i.niupic.com/images/2019/11/10/_144.png" alt="enter image description here"></p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><code>原因</code></h3><p>Referrer Policy(引用策略)</p>
+<blockquote>
+<p>引用策略就是从一个文档发出请求时，是否在请求头部定义 Referrer 的设置。</p>
+</blockquote>
+<hr>
+<p><code>referrer 的值：</code></p>
+<ul>
+<li><p>默认值： 一般浏览器的默认值是 no-referrer-when-downgrade</p>
+</li>
+<li><p>no-referrer： 所有请求不发送 referrer</p>
+</li>
+<li><p>no-referrer-when-downgrade： 当请求安全级别下降时不发送 referrer。目前，只有一种情况会发生安全级别下降，即从 HTTPS 到 HTTP。HTTPS 到 HTTP 的资源引用和链接跳转都不会发送 referrer。</p>
+</li>
+<li><p>same-origin：对于同源的链接和引用，会发送referrer，其他的不会。</p>
+</li>
+<li><p>origin：会发送 referrer，但只会发送源信息。源信息包括访问协议和域名。</p>
+</li>
+<li><p>strict-origin：这个相当于 origin 和 no-referrer-when-downgrade 的 AND 合体。即在安全级别下降时不发送 referrer；安全级别未下降时发送源信息。<br>注意：这个是新加的标准，有些浏览器可能还不支持。 </p>
+</li>
+<li><p>origin-when-cross-origin：这个相当于 origin 和 same-origin 的 OR 合体。同源的链接和引用，会发送完全的 referrer 信息；但非同源链接和引用时，只发送源信息。</p>
+</li>
+<li><p>strict-origin-when-cross-origin：这个比较复杂，同源的链接和引用，会发送 referrer。安全级别下降时不发送 referrer。其它情况下发送源信息。注意：这个是新加的标准，有些浏览器可能还不支持。 </p>
+</li>
+<li><p>unsafe-url：无论是否发生协议降级，无论是本站链接还是站外链接，统统都发送 </p>
+</li>
+<li><p>Referrer 信息。正如其名，这是最宽松而最不安全的策略。</p>
+</li>
+</ul>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><code>解决方法</code></h3><blockquote>
+<ol>
+<li>通过 http 响应头中的 Referrer-Policy 字段</li>
+<li>在页面添加<code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;</code></li>
+<li>通过<code>&lt;a&gt;、&lt;area&gt;、&lt;img&gt;、&lt;iframe&gt;、&lt;link&gt;</code>标签的 referrerpolicy 属性。</li>
+</ol>
+</blockquote>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a><code>效果图</code></h3><p><img src="https://i.niupic.com/images/2019/11/10/_166.png" alt="enter image description here"></p>
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年04月16日 11:17</p>
-        <p>原始链接： <a class="post-url" href="/google405c9d658ad71e7f.html" title>https://hello-zachary.github.io/google405c9d658ad71e7f.html</a></p>
+        <p>最后更新： 2019年11月10日 21:45</p>
+        <p>原始链接： <a class="post-url" href="/2019/11/10/loadPic/" title="img标签图片加载异常">https://hello-zachary.github.io/2019/11/10/loadPic/</a></p>
         <footer>
             <a href="https://hello-zachary.github.io">
                 <img src="/images/logo.jpg" alt="Zachary">
@@ -202,7 +279,7 @@ ga('send', 'pageview');
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hello-zachary.github.io/google405c9d658ad71e7f.html&title=Zachary&pic=https://hello-zachary.github.ioimages/logo.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hello-zachary.github.io/2019/11/10/loadPic/&title=《img标签图片加载异常》 — Zachary&pic=/images/test.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -212,22 +289,22 @@ ga('send', 'pageview');
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hello-zachary.github.io/google405c9d658ad71e7f.html&title=Zachary&source=一个热爱生活的程序猿" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hello-zachary.github.io/2019/11/10/loadPic/&title=《img标签图片加载异常》 — Zachary&source=一个热爱生活的程序猿" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hello-zachary.github.io/google405c9d658ad71e7f.html" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hello-zachary.github.io/2019/11/10/loadPic/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Zachary&url=https://hello-zachary.github.io/google405c9d658ad71e7f.html&via=https://hello-zachary.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《img标签图片加载异常》 — Zachary&url=https://hello-zachary.github.io/2019/11/10/loadPic/&via=https://hello-zachary.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hello-zachary.github.io/google405c9d658ad71e7f.html" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hello-zachary.github.io/2019/11/10/loadPic/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -237,7 +314,7 @@ ga('send', 'pageview');
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://hello-zachary.github.io/google405c9d658ad71e7f.html" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://hello-zachary.github.io/2019/11/10/loadPic/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -246,6 +323,17 @@ ga('send', 'pageview');
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/HTML/" class="color5">HTML</a>
+      
+    <a href="/tags/图片加载/" class="color5">图片加载</a>
+      
+    <a href="/tags/原因/" class="color3">原因</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -253,11 +341,27 @@ ga('send', 'pageview');
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#img标签加载图片异常"><span class="post-toc-text">img标签加载图片异常</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题引入"><span class="post-toc-text">问题引入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原因"><span class="post-toc-text">原因</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-text">解决方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#效果图"><span class="post-toc-text">效果图</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/20/FIRST/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">编译原理---FIRST集的求法</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
 
 
     
-        <div id="SOHUCS" sid></div>
+        <div id="SOHUCS" sid="loadPic"></div>
 <script type="text/javascript">
     (function(){
         var appid = 'cyubuzcvo';
