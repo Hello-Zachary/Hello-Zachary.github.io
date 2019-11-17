@@ -5,21 +5,25 @@
   <meta name="baidu-site-verification" content="sLHVMS1DLZ">
   <meta charset="utf-8">
   
-  <title>归档: 2019 | Zachary</title>
+  <title>Mysql查询优化 | Zachary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Zachary,Zachary's Blog">
   
-  <meta name="description" content="一个热爱生活的程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zachary">
-<meta property="og:url" content="https://hello-zachary.github.io/archives/2019/index.html">
+  <meta name="description" content="定位、分析慢查询语句1、启动mysql数据库时开启慢查询，并且把执行慢的语句写到日志中，在运行一段时间后，通过查看日志找到慢查询语句。 2、  使用explain慢查询语句，来分析语句的问题  开启慢查询记录方法一（临时起效）： 123Show variables like ‘slow_query%’; --查询Set global slow_query_log = ‘ON’; --开启慢查询Se">
+<meta name="keywords" content="Mysql,优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql查询优化">
+<meta property="og:url" content="https://hello-zachary.github.io/2019/11/17/mysql/index.html">
 <meta property="og:site_name" content="Zachary">
-<meta property="og:description" content="一个热爱生活的程序猿">
+<meta property="og:description" content="定位、分析慢查询语句1、启动mysql数据库时开启慢查询，并且把执行慢的语句写到日志中，在运行一段时间后，通过查看日志找到慢查询语句。 2、  使用explain慢查询语句，来分析语句的问题  开启慢查询记录方法一（临时起效）： 123Show variables like ‘slow_query%’; --查询Set global slow_query_log = ‘ON’; --开启慢查询Se">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/11/17/MrdKx0.png">
+<meta property="og:updated_time" content="2019-11-17T09:23:23.339Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zachary">
-<meta name="twitter:description" content="一个热爱生活的程序猿">
+<meta name="twitter:title" content="Mysql查询优化">
+<meta name="twitter:description" content="定位、分析慢查询语句1、启动mysql数据库时开启慢查询，并且把执行慢的语句写到日志中，在运行一段时间后，通过查看日志找到慢查询语句。 2、  使用explain慢查询语句，来分析语句的问题  开启慢查询记录方法一（临时起效）： 123Show variables like ‘slow_query%’; --查询Set global slow_query_log = ‘ON’; --开启慢查询Se">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/11/17/MrdKx0.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -134,35 +138,161 @@ ga('send', 'pageview');
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap">
-  
-  
+        <section id="main" class="body-wrap"><article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/17/mysql/" class="archive-article-date">
-  <time datetime="2019-11-16T16:00:00.000Z" itemprop="datePublished">11-17</time>
-</a>
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/17/mysql/">Mysql查询优化</a>
+    <h1 class="post-title" itemprop="name">
+      Mysql查询优化
     </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Mysql查询优化/">Mysql查询优化</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-11-17
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
   
 
-    </header>
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
       
-        <div class="archive-post-footer">
+            
+            <h3 id="定位、分析慢查询语句"><a href="#定位、分析慢查询语句" class="headerlink" title="定位、分析慢查询语句"></a>定位、分析慢查询语句</h3><p><code>1、启动mysql数据库时开启慢查询，并且把执行慢的语句写到日志中，在运行一段时间后，通过查看日志找到慢查询语句。</code></p>
+<p><code>2、  使用explain慢查询语句，来分析语句的问题</code></p>
+<hr>
+<h3 id="开启慢查询记录"><a href="#开启慢查询记录" class="headerlink" title="开启慢查询记录"></a>开启慢查询记录</h3><p><code>方法一（临时起效）：</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Show variables like ‘slow_query%’; --查询</span><br><span class="line">Set global slow_query_log = ‘ON’; --开启慢查询</span><br><span class="line">Set global long_query_time=1; --查询时间超过一秒就记录</span><br></pre></td></tr></table></figure>
+<p><code>方法二（永久有效）：</code></p>
+<p><img src="https://s2.ax1x.com/2019/11/17/MrdKx0.png" alt="enter image description here"></p>
+<h3 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h3><blockquote>
+<ol>
+<li>创建索引</li>
+<li>分表</li>
+<li>读写分离</li>
+<li>缓存（redis缓存）</li>
+</ol>
+</blockquote>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年11月17日 17:23</p>
+        <p>原始链接： <a class="post-url" href="/2019/11/17/mysql/" title="Mysql查询优化">https://hello-zachary.github.io/2019/11/17/mysql/</a></p>
+        <footer>
+            <a href="https://hello-zachary.github.io">
+                <img src="/images/logo.jpg" alt="Zachary">
+                Zachary
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hello-zachary.github.io/2019/11/17/mysql/&title=《Mysql查询优化》 — Zachary&pic=/images/Mysql.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hello-zachary.github.io/2019/11/17/mysql/&title=《Mysql查询优化》 — Zachary&source=一个热爱生活的程序猿" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hello-zachary.github.io/2019/11/17/mysql/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mysql查询优化》 — Zachary&url=https://hello-zachary.github.io/2019/11/17/mysql/&via=https://hello-zachary.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hello-zachary.github.io/2019/11/17/mysql/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://hello-zachary.github.io/2019/11/17/mysql/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
             
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
@@ -173,156 +303,42 @@ ga('send', 'pageview');
       
   </li>
 
-        </div>
-      
+        </ul>
+        
+    </footer>
   </div>
 </article>
 
-  
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定位、分析慢查询语句"><span class="post-toc-text">定位、分析慢查询语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开启慢查询记录"><span class="post-toc-text">开启慢查询记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优化方法"><span class="post-toc-text">优化方法</span></a></li></ol>
+        </nav>
+    </aside>
     
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/10/loadPic/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">img标签图片加载异常</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/10/loadPic/" class="archive-article-date">
-  <time datetime="2019-11-10T12:02:23.000Z" itemprop="datePublished">11-10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/10/loadPic/">img标签图片加载异常</a>
-    </h1>
-  
-
-    </header>
-      
-        <div class="archive-post-footer">
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/HTML/" class="color5">HTML</a>
-      
-    <a href="/tags/图片加载/" class="color5">图片加载</a>
-      
-    <a href="/tags/原因/" class="color3">原因</a>
-      
-  </li>
-
-        </div>
-      
-  </div>
-</article>
-
-  
+        <div id="SOHUCS" sid="mysql"></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyubuzcvo';
+        var conf = '524df2cccf02bf04aac5e4405eee733c';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/20/FIRST/" class="archive-article-date">
-  <time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished">04-20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/FIRST/">编译原理---FIRST集的求法</a>
-    </h1>
-  
-
-    </header>
-      
-        <div class="archive-post-footer">
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/编译原理/" class="color5">编译原理</a>
-      
-    <a href="/tags/FIRST集/" class="color2">FIRST集</a>
-      
-  </li>
-
-        </div>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/17/wechat/" class="archive-article-date">
-  <time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished">04-17</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/wechat/">微信小程序上拉更新数据</a>
-    </h1>
-  
-
-    </header>
-      
-        <div class="archive-post-footer">
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/微信小程序/" class="color1">微信小程序</a>
-      
-    <a href="/tags/上拉更新数据/" class="color2">上拉更新数据</a>
-      
-  </li>
-
-        </div>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/15/hexoFile/" class="archive-article-date">
-  <time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished">04-15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/hexoFile/">Hexo文件目录结构</a>
-    </h1>
-  
-
-    </header>
-      
-        <div class="archive-post-footer">
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/Hexo/" class="color5">Hexo</a>
-      
-    <a href="/tags/目录结构/" class="color5">目录结构</a>
-      
-    <a href="/tags/作用/" class="color3">作用</a>
-      
-  </li>
-
-        </div>
-      
-  </div>
-</article>
-
-  
-  
-    </div></section>
-  
-
 </section>
         
       </div>
